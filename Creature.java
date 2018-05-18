@@ -8,9 +8,9 @@ import java.util.List;
 public class Creature {
 	private World world;
 	
-	public int x;
-	public int y;
-	public int z;
+	protected int x;
+	protected int y;
+	protected int z;
 	
 	private char glyph;
 	public char glyph() { return glyph; }
@@ -121,7 +121,7 @@ public class Creature {
 		this.food = maxFood / 3 * 2;
 		this.level = 1;
 		this.regenHpPer1000 = 10;
-		this.effects = new ArrayList<Effect>();
+		this.effects = new ArrayList<>();
 		this.maxMana = 5;
 		this.mana = maxMana;
 		this.regenManaPer1000 = 20;
@@ -247,7 +247,7 @@ public class Creature {
 	}
 	
 	private void updateEffects(){
-		List<Effect> done = new ArrayList<Effect>();
+		List<Effect> done = new ArrayList<>();
 		
 		for (Effect effect : effects){
 			effect.update(this);
@@ -315,7 +315,7 @@ public class Creature {
 	}
 	
 	private List<Creature> getCreaturesWhoSeeMe(){
-		List<Creature> others = new ArrayList<Creature>();
+		List<Creature> others = new ArrayList<>();
 		int r = 9;
 		for (int ox = -r; ox < r+1; ox++){
 			for (int oy = -r; oy < r+1; oy++){

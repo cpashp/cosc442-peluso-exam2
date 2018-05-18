@@ -35,7 +35,7 @@ public class FieldOfView {
 		updateForTwo(wx, wy, r, wz);
 	}
 	
-	public void updateLoop(int wx, int wy, int wz, int r, int x, int y)
+	public void updateLoop(int wx, int wy, int wz, int x, int y)
 	{
 		for (Point p : new Line(wx, wy, wx + x, wy + y)){
 			Tile tile = world.tile(p.x, p.y, wz);
